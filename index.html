@@ -35,19 +35,28 @@
             padding: 8vh 2rem 3vh;
             text-align: center;
         }
-        .brand {
-            font-size: 0.8rem;
+        /* Modernisiertes Branding-Element */
+        .brand-badge {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 100px;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            margin-bottom: 2rem;
+        }
+        .brand-name {
+            font-size: 0.85rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.3rem;
-            color: var(--text-sub);
-            margin-bottom: 1rem;
+            letter-spacing: 0.2rem;
+            color: var(--text-main);
         }
         .hero-text {
             font-size: clamp(2.5rem, 6vw, 3.5rem);
             font-weight: 800;
-            line-height: 1;
-            letter-spacing: -0.03em;
+            line-height: 1.1;
+            letter-spacing: -0.04em;
             margin: 0;
         }
         main {
@@ -65,7 +74,6 @@
             line-height: 1.6;
             color: var(--text-main);
         }
-        /* Der neue dezente Divider */
         .divider {
             height: 1px;
             width: 80px;
@@ -145,7 +153,9 @@
 <body>
 
 <header>
-    <div class="brand">Tracking Labs</div>
+    <div class="brand-badge">
+        <span class="brand-name">Tracking Labs</span>
+    </div>
     <h1 class="hero-text">Engineering Digital<br>Experiences.</h1>
 </header>
 
@@ -154,12 +164,11 @@
         <p>Specializing in high-performance Android solutions, focusing on scalable architectures and fluid user interfaces.</p>
     </div>
 
-    <!-- Minimalist Divider -->
     <div class="divider"></div>
 
     <div class="contact-area">
         <p class="contact-text">For technical support and business inquiries.</p>
-        <a href="mailto:tracking.labs@gmail.com" class="btn">Get in Touch</a>
+        <a href="tracking.labs@gmail.com" class="btn">Get in Touch</a>
     </div>
 </main>
 
