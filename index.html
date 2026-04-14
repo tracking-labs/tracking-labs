@@ -3,97 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tracking Labs | Premium Mobile Experiences</title>
-	
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚀%3C/text%3E%3C/svg%3E">
-
-
+    <title>Tracking Labs | Mobile Excellence</title>
     <style>
         :root {
             --primary: #2563eb;
-            --bg: #f8fafc;
-            --text: #1e293b;
-            --text-light: #64748b;
+            --text-main: #111827;
+            --text-sub: #6b7280;
+            --bg: #ffffff;
+            --divider: #f3f4f6;
         }
-        body { 
-            font-family: 'Inter', -apple-system, sans-serif; 
-            background-color: var(--bg); 
-            color: var(--text);
+        body {
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
             margin: 0;
+            -webkit-font-smoothing: antialiased;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;App Studio
-
             min-height: 100vh;
-            align-items: center;
-            justify-content: center;
         }
-        .container { 
-            width: 90%;
-            max-width: 450px;
-            background: white; 
-            padding: 40px; 
-            border-radius: 24px; 
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(#e5e7eb 0.5px, transparent 0.5px);
+            background-size: 40px 40px;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        header {
+            padding: 8vh 2rem 3vh;
             text-align: center;
         }
-        .logo { 
-            width: 100px; 
-            height: 100px; 
-            background: linear-gradient(135deg, #3b82f6, #2563eb);
-            border-radius: 22%; 
-            margin: 0 auto 24px;
+        /* Modernisiertes Branding-Element */
+        .brand-badge {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 100px;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            margin-bottom: 2rem;
+        }
+        .brand-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            color: var(--text-main);
+        }
+        .hero-text {
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.04em;
+            margin: 0;
+        }
+        main {
+            flex: 1;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 2vh 2rem 5vh;
+            text-align: center;
+        }
+        .content-block {
+            margin-bottom: 5vh;
+        }
+        .content-block p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: var(--text-main);
+        }
+        .divider {
+            height: 1px;
+            width: 80px;
+            background-color: var(--divider);
+            margin: 0 auto 5vh;
+        }
+        .contact-area {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
+        }
+        .contact-text {
+            font-size: 1rem;
+            color: var(--text-sub);
+            margin-bottom: 2rem;
+        }
+        .btn {
+            background: var(--primary);
             color: white;
-            font-weight: bold;
-            font-size: 40px;
-            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
-        }
-        h1 { font-size: 28px; margin: 0 0 12px; letter-spacing: -0.5px; }
-        p { font-size: 16px; color: var(--text-light); line-height: 1.6; margin-bottom: 30px; }
-        .btn { 
-            display: inline-block; 
-            background-color: var(--primary); 
-            color: white; 
-            padding: 14px 28px; 
-            text-decoration: none; 
-            border-radius: 12px; 
+            padding: 1.1rem 2.8rem;
+            border-radius: 12px;
+            text-decoration: none;
             font-weight: 600;
-            transition: transform 0.2s, background 0.2s;
+            font-size: 1.05rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2);
         }
-        .btn:hover { background-color: #1d4ed8; transform: translateY(-2px); }
-        .footer { 
-            margin-top: 40px; 
-            font-size: 13px; 
-            color: var(--text-light); 
-            text-align: center;
-            line-height: 1.8;
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.3);
+            opacity: 0.95;
         }
-        .divider { height: 1px; background: #e2e8f0; margin: 20px 0; }
+        footer {
+            padding: 5vh 2rem;
+            border-top: 1px solid #f3f4f6;
+            background: #fafafa;
+        }
+        .footer-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+        }
+        .legal-info {
+            line-height: 1.6;
+            text-align: left;
+        }
+        .legal-info strong {
+            color: var(--text-main);
+            display: block;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05rem;
+        }
+        .footer-right {
+            text-align: right;
+        }
+        .footer-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        @media (max-width: 600px) {
+            .footer-container { flex-direction: column; align-items: center; text-align: center; gap: 2.5rem; }
+            .legal-info { text-align: center; }
+            .footer-links a { margin: 0 0.75rem; }
+            .footer-right { text-align: center; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Ein schickes Platzhalter-Logo (Icon) -->
-        <div class="logo">TL</div>
-        <h1>Tracking Labs </h1>
-        <p>We design and develop high-quality mobile applications for a global audience. Experience innovation and clean design. <br>For support and inquiries, contact us below.</p>
-<a href="mailto:tracking.labs@gmail.com" class="btn">Get in Touch</a>
+<header>
+    <div class="brand-badge">
+        <span class="brand-name">Tracking Labs</span>
+    </div>
+    <h1 class="hero-text">Engineering Digital<br>Experiences.</h1>
+</header>
 
+<main>
+    <div class="content-block">
+        <p>Specializing in high-performance Android solutions, focusing on scalable architectures and fluid user interfaces.</p>
     </div>
 
-    <div class="footer">
-        <strong>Legal & Support</strong><br>
-        Tracking Labs LLC<br>
-        Apartment N11, Building N2, 111 Uznadze str.<br>
-        Tbilisi 0102, Georgia<br>
-        tracking.labs@gmail.com<br>
-        <div class="divider"></div>
-        &copy; 2026 Tracking Labs
+    <div class="divider"></div>
+
+    <div class="contact-area">
+        <p class="contact-text">For support or business inquiries, reach out to our team.</p>
+        <a href="mailto:tracking.labs@gmail.com" class="btn">Get in Touch</a>
     </div>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <div class="legal-info">
+            <strong>Legal & Support</strong>
+            Tracking Labs LLC<br>
+            111 Uznadze str., Tbilisi 0102, Georgia
+        </div>
+        <div class="footer-right">
+            <div class="footer-links" style="margin-bottom: 0.5rem;">
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <span>&copy; 2026 Tracking Labs. Built for Excellence.</span>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
