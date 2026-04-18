@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Track the Labs | Mobile Excellence</title>
+    <title>Tracking Labs | Mobile Excellence</title>
     <style>
         :root {
             --primary: #2563eb;
             --text-main: #111827;
             --text-sub: #6b7280;
             --bg: #ffffff;
+            --divider: #f3f4f6;
         }
         body {
             font-family: 'Inter', -apple-system, system-ui, sans-serif;
@@ -27,118 +28,125 @@
             top: 0; left: 0; width: 100%; height: 100%;
             background-image: radial-gradient(#e5e7eb 0.5px, transparent 0.5px);
             background-size: 40px 40px;
-            opacity: 0.2;
+            opacity: 0.3;
             z-index: -1;
         }
         header {
-            padding: 12vh 2rem 1vh;
+            padding: 8vh 2rem 3vh;
             text-align: center;
         }
+        /* Modernisiertes Branding-Element */
         .brand-badge {
             display: inline-block;
-            padding: 0.4rem 1rem;
+            padding: 0.5rem 1.2rem;
             border: 1px solid #e5e7eb;
             border-radius: 100px;
             background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
             margin-bottom: 2rem;
         }
         .brand-name {
-            font-size: 0.75rem;
-            font-weight: 600;
+            font-size: 0.85rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.15rem;
-            color: var(--text-sub);
+            letter-spacing: 0.2rem;
+            color: var(--text-main);
         }
         .hero-text {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.04em;
             margin: 0;
         }
-
-        .stats-box {
-            margin: 5vh 0;
-            text-align: center;
-        }
-        .counter-value {
-            font-size: clamp(2rem, 6vw, 3rem);
-            font-weight: 500;
-            color: var(--text-main);
-            margin-bottom: 0.2rem;
-            display: block;
-        }
-        .stats-label {
-            font-size: 0.9rem;
-            font-weight: 400;
-            color: var(--text-sub);
-            letter-spacing: 0.05rem;
-        }
-
         main {
             flex: 1;
-            max-width: 650px;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 0 2rem 6vh;
+            padding: 2vh 2rem 5vh;
             text-align: center;
         }
-        .description {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: var(--text-sub);
-            margin-bottom: 4vh;
+        .content-block {
+            margin-bottom: 5vh;
         }
-        
-        .action-area {
+        .content-block p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: var(--text-main);
+        }
+        .divider {
+            height: 1px;
+            width: 80px;
+            background-color: var(--divider);
+            margin: 0 auto 5vh;
+        }
+        .contact-area {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2rem;
         }
-        
-        .play-store-link {
-            display: inline-block;
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .play-store-link:hover {
-            transform: scale(1.05);
-        }
-        .play-store-img {
-            width: 200px;
-            height: auto;
-            display: block;
-        }
-        
-        .mail-link {
-            color: var(--text-main);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            opacity: 0.6;
-            transition: opacity 0.2s;
-        }
-        .mail-link:hover { opacity: 1; }
-
-        footer {
-            padding: 4vh 2rem;
-            font-size: 0.8rem;
+        .contact-text {
+            font-size: 1rem;
             color: var(--text-sub);
+            margin-bottom: 2rem;
+        }
+        .btn {
+            background: var(--primary);
+            color: white;
+            padding: 1.1rem 2.8rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.3);
+            opacity: 0.95;
+        }
+        footer {
+            padding: 5vh 2rem;
             border-top: 1px solid #f3f4f6;
+            background: #fafafa;
         }
         .footer-container {
             max-width: 900px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
+            font-size: 0.85rem;
+            color: var(--text-sub);
         }
-        .footer-container a {
+        .legal-info {
+            line-height: 1.6;
+            text-align: left;
+        }
+        .legal-info strong {
+            color: var(--text-main);
+            display: block;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05rem;
+        }
+        .footer-right {
+            text-align: right;
+        }
+        .footer-links a {
             color: var(--text-main);
             text-decoration: none;
             font-weight: 600;
+            margin-left: 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
         }
         @media (max-width: 600px) {
-            .footer-container { flex-direction: column; gap: 1.5rem; text-align: center; }
+            .footer-container { flex-direction: column; align-items: center; text-align: center; gap: 2.5rem; }
+            .legal-info { text-align: center; }
+            .footer-links a { margin: 0 0.75rem; }
+            .footer-right { text-align: center; }
         }
     </style>
 </head>
@@ -146,64 +154,39 @@
 
 <header>
     <div class="brand-badge">
-        <span class="brand-name">Track the Labs</span>
+        <span class="brand-name">Tracking Labs</span>
     </div>
     <h1 class="hero-text">Engineering Digital<br>Experiences.</h1>
 </header>
 
 <main>
-    <div class="stats-box">
-        <span class="counter-value" id="download-counter">0</span>
-        <span class="stats-label">Users Worldwide</span>
+    <div class="content-block">
+        <p>Specializing in high-performance Android solutions, focusing on scalable architectures and fluid user interfaces.</p>
     </div>
 
-    <p class="description">
-        Specializing in high-performance Android solutions, focusing on scalable architectures and fluid user interfaces.
-    </p>
+    <div class="divider"></div>
 
-    <div class="action-area">
-        <!-- ERSETZE DEINE_APP_ID DURCH DEINE ECHTE ID -->
-        <a href="https://play.google.com/store/apps/details?id=com.trackinglabs.parceltracker" target="_blank" class="play-store-link">
-            <img class="play-store-img" 
-                 src="https://wikimedia.org" 
-                 alt="Get it on Google Play">
-        </a>
-        <a href="mailto:info@deinedomain.com" class="mail-link">Inquiries: info@deinedomain.com</a>
+    <div class="contact-area">
+        <p class="contact-text">For technical support and business inquiries.</p>
+        <a href="mailto:info@tracking-labs.com" class="btn">Get in Touch</a>
     </div>
 </main>
 
 <footer>
     <div class="footer-container">
-        <div>&copy; 2026 Track the Labs</div>
-        <div>
-            <a href="privacy.html">Privacy Policy</a>
+        <div class="legal-info">
+            <strong>Legal & Support</strong>
+            Tracking Labs LLC<br>
+            111 Uznadze str., Tbilisi 0102, Georgia
+        </div>
+        <div class="footer-right">
+            <div class="footer-links" style="margin-bottom: 0.5rem;">
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <span>&copy; 2026 Tracking Labs. Built for Excellence.</span>
         </div>
     </div>
 </footer>
-
-<script>
-    function animateCounter(id, start, end, duration) {
-        let obj = document.getElementById(id);
-        let range = end - start;
-        let startTime = new Date().getTime();
-        let endTime = startTime + duration;
-
-        function run() {
-            let now = new Date().getTime();
-            let remaining = Math.max((endTime - now) / duration, 0);
-            let value = Math.round(end - (remaining * range));
-            obj.innerHTML = value.toLocaleString('de-DE') + "+";
-            if (value == end) return;
-            requestAnimationFrame(run);
-        }
-        requestAnimationFrame(run);
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-        // Zählt von 0 auf 3.000.000 in 2,5 Sekunden
-        animateCounter("download-counter", 0, 3000000, 2500);
-    });
-</script>
 
 </body>
 </html>
